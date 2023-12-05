@@ -16,6 +16,8 @@ def handler(event, context):
   try:
     deployment_source_bucket = event['ResourceProperties']['DeploymentSourceBucket']
     deployment_source_key = event['ResourceProperties']['DeploymentSourceKey']
+    upload_as_folder = event['ResourceProperties']['UploadAsFolder'] == 'true'
+    print("DEBUG1: upload as folder: ", upload_as_folder)
     deployment_bucket = event['ResourceProperties']['DeploymentBucket']
     deployment_key = ''
     if 'DeploymentKey' in event['ResourceProperties']:

@@ -11,6 +11,7 @@ CloudFormation do
     Property 'DeploymentBucket', Ref(:DeploymentBucket)
     Property 'DeploymentKey', Ref(:DeploymentKey)
     Property 'DeploymentFilter', FnSub(deployment_filter.to_json()) unless deployment_filter.nil?
+    Property 'UploadAsFolder', Ref(:UploadAsFolder)
   end
 
 end
